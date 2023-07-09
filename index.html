@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      /* display: flex;
+      flex-wrap: wrap; */
+      /* background-size: cover; */
+      max-width: 100%; /* Set the desired maximum width in pixels or any other CSS unit */
+      margin: 0 auto; /* Center the container horizontally */
+      /* padding: 20px;  */
+    }
+
+    .row {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    .just-row {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      flex: 1;
+      display: flex;
+      width: 100%;
+      width: 100vw;
+      
+    }
+    .nav-bar{
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        color: rgb(208, 208, 228);
+        width: 100%;
+      width: 100vw;
+      background-color: #1f1f1f;
+      flex: 1;
+      display: flex;
+      padding-left: 28%;
+      padding-top: 10px;
+    }
+
+    .column {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .just-column{
+      flex: 1;
+      display: flex;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      background-color: #1f1f1f;
+    }
+    .header {
+      background-color: #1f1f1f;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+    }
+
+    .header-even {
+      background-color: #333;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+    }
+
+    .row:nth-child(odd) .column {
+      background-color: #1f1f1f;
+    }
+
+    .row:nth-child(even) .column {
+      background-color: #333;
+    }
+
+    .profile-image {
+      width: 14 0px;
+      height: 150px;
+      border-radius: 80%;
+      margin-right: 10px;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .font-bold {
+      font-weight: bold;
+    }
+
+    .tracking-tight {
+      letter-spacing: -0.025em;
+    }
+
+    .text-slate-200 {
+      color: #94a3b8;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .text-slate-500 {
+      color: #94a3b8;
+    }
+    .text-slate-400 {
+      color: #94a3b8;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+    }
+
+    .nav-text {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .tracking-widest {
+      letter-spacing: 0.05em;
+    }
+
+    .social-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+      display: flex;
+      gap: 15px;
+      color: white;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 28px;
+    }
+
+    .image-resize {
+      max-width: 90%;
+      height: auto;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #5eead4; /* Adjust the color code as desired */
+    }
+
+    .vertical-line {
+      position: relative;
+    }
+
+    .vertical-line:before {
+      /* content: ''; */
+      /* position: absolute; */
+      /* top: 0; */
+      /* left: calc(20% + 20px); Adjust the positioning as desired* */
+      /* width: 2px; */
+      /* height: 100%; */
+      /* background-color: white; */
+      /* transform: translateX(-50%);  */
+      padding-top:50px
+    }
+
+    .experience-item {
+  /* display: flex;
+  align-items: flex-start; */
+  margin-bottom: 20px;
+}
+
+.experience-date {
+  width: 300px;
+  /* text-align: right; */
+  /* margin-right: 20px; */
+  padding-left: 10px;
+}
+
+.experience-details {
+  flex-grow: 1;
+}
+
+.experience-company {
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
+
+.experience-text{
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.experience-text-posi{
+  padding-top: -10px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+.experience-text-para{
+  padding-top: -10px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.experience-position {
+  font-style: italic;
+  margin-top: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.experience-description {
+  margin-top: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+    .image-publication {
+      max-width: 50;
+      height: 50;
+      width: 50;
+      padding-top: 50;
+    }
+
+    .grid-container {
+        display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      text-align: center;
+      background-color: #1f1f1f;
+    }
+    .grid-container-open {
+        display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      text-align: center;
+      background-color: #333;
+    }
+    .grid-container-project {
+        display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 5px;
+      text-align: center;
+      background-color: #1f1f1f;
+      width: 100%
+    }
+    .grid-subcontainer-project {
+        display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      text-align: left;
+      background-color: #1f1f1f;
+      width: 70%;
+    height: 30%;
+    margin-left: 10%;
+    }
+    .grid-subcontainer-project-final {
+        display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      /* grid-gap: 10px; */
+      text-align: left;
+      background-color: #1f1f1f;
+      width: 100%;
+    /* height: 30%; */
+    /* margin-left: 10%; */
+   
+    }
+    /* .grid-item-project-final{} */
+
+    .grid-item {
+      /* border: 1px solid black; */
+      padding: 20px;
+      /* padding-top: 50px; */
+      background-color: #1f1f1f;
+    }
+
+    .grid-item-project {
+      /* border: 1px solid black; */
+      padding: 1px;
+      /* padding-top: 50px; */
+      background-color: #1f1f1f;
+      /* width:100% */
+    }
+    .grid-item-first {
+      /* border: 1px solid black; */
+      /* padding: 10px; */
+      /* padding-right: 20px;*/
+      padding-top: 50px; 
+      background-color: #1f1f1f;
+      width: 100%;
+    }
+
+    .grid-item-first-open {
+      /* border: 1px solid black; */
+      /* padding: 10px; */
+      /* padding-right: 20px;
+      padding-top: 50px; */
+      background-color: #333;
+      padding: 20px;
+    }
+    .grid-item-first-project {
+      /* border: 1px solid black; */
+      /* padding: 10px; */
+      padding-right: 20px;
+      padding-top: 50px;
+      background-color: #1f1f1f;
+    }
+    .grid-item a {
+      color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none; /* Remove underline */
+    }
+    .grid-item-first a {
+      color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none; /* Remove underline */
+    }
+    .description{
+        font-size: 12pt;
+        /* padding-left: 20px; */
+        /* padding-right: 20px; */
+        padding-top: -10px;
+        text-align: justify;
+  text-justify: inter-word;
+    }
+    .description-project{
+        font-size: 15pt;
+        text-align: center;
+  text-justify: inter-word;
+  text-align: justify;
+  text-justify: inter-word;
+    }
+
+    .grid-item-project a{
+        color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none;
+    }
+    .grid-item-project-final a{
+        color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none;
+    }
+    .grid-item-first-open a{
+      color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none;
+    }
+    .nav-bar a{
+        color: inherit; /* Set the link color to inherit from parent */
+      text-decoration: none;
+    }
+    .nav-text {
+      /* ... Existing styles ... */
+      margin: 0 10px; /* Added to add spacing between the links */
+    }
+
+    .project-row {
+        /* display: flex;
+      justify-content: flex-start; */
+      align-items: left;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      width:100%
+    }
+
+    .project-list {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .project-list-item {
+      margin-bottom: 10px;
+    }
+
+    .project-list-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .project-description {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    a:link {
+  color: rgb(208, 208, 228);; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<script>
+    var div =
+        document.querySelector(".container");
+
+    div.addEventListener(
+        "mousemove", function (e) {
+            x = e.offsetX;
+            y = e.offsetY;
+            div.style.backgroundColor
+                = `rgb(${x}, ${y}, ${x - y})`;
+        });
+</script>
+<body>
+    <div>
+        <div>
+          <div class="nav-bar">
+            <a href="#about" class="nav-text">About</a>
+            <a href="#experience" class="nav-text">Experience</a>
+            <a href="#publication" class="nav-text">Publications</a>
+            <a href="#opensource" class="nav-text">Open Source Contributions</a>
+            <a href="#project" class="nav-text">Projects</a>
+            <!-- <a href="#blogs" class="nav-text">Blogs</a> -->
+
+          </div>
+        </div>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <div>
+        <img class="profile-image" src="./rohan_photo.JPG" alt="Rohan Akut's Photo">
+        <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">Rohan Akut</h1>
+        <p class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Machine Learning Engineer at iCAD Dental<br></p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/rohan-akut-13535711a/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/rohanakut" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.ca/citations?hl=en&user=OWHC0DUAAAAJ" target="_blank" rel="noopener noreferrer"><i class="fas fa-user-graduate"></i></a>
+        <a href="mailto:rohan.akut@mail.mcgill.ca" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="column">
+      <section id="about">
+        <p class="leading-normal text-slate-400">Experienced <strong>Machine Learning Engineer</strong> and <strong>Computer Vision Researcher</strong> with a proven track record of developing innovative solutions and driving impactful results. I possess a strong background in image processing, deep learning, and AI algorithm development. My expertise spans across <strong>diverse domains</strong>, including dental imaging, healthcare, and accessibility technologies. <br> <br> After working with <strong>Fortune 500</strong> companies, <strong>startups</strong>, and in <strong>academia</strong>, I am motivated to bridge the gap between AI and business solutions, creating AI-powered solutions that improve processes and enhance user experiences. <br> <br> I have completed my Master's in ECE from McGill University and have gained valuable skills such as <strong>Python, PyTorch, Tensorflow, MLflow, Docker and AWS</strong> <br><br> You can find my full resume <strong><a href="https://drive.google.com/file/d/1cZzQHFFswu2iXYmVBHEC1pUBfdXxU7nQ/view?usp=sharing"><u>here</u></a></strong></p>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="header-even">
+      <h2>Experience</h2>
+    </div>
+    <div class="column">
+      <section id="experience">
+      <div class="vertical-line">
+        <div class="experience-item">
+          <!-- <div class="experience-date">2021 - Present</div> -->
+          <div class="experience-text">
+            <h3> 2021 - Present &nbsp; iCAD Dental</h3>
+            <p class="experience-text-posi">Machine Learning Engineer</p>
+            <p class="experience-text-para">Focused on integrating AI models to improve the process of tooth reconstruction and dental surgery</p>
+          </div>
+        </div>
+        <div class="experience-item">
+          <div class="experience-text">
+            <h3> 2020 -2023 &nbsp; McGill University </h3>
+            <p class="experience-text-posi">Master's Thesis Student</p>
+            <p class="experience-text-para">Used Computer Vision to improve accessibility for blind individuals</p>
+          </div>
+        </div>
+        <div class="experience-item">
+          <!-- <div class="experience-date">2020 - 2020</div> -->
+          <div class="experience-text">
+            <h3 class="experience-name">2020-2020 &nbsp; Deloitte </h3>
+            <p class="experience-text-posi">Business Technology Analyst</p>
+            <p class="experience-text-para">Developed and maintained Louisiana State-sponsored Healthcare system's portal</p>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="column">
+          <img class="image-resize" src="/Users/rohanakut/Downloads/sankeymatic_20230708_000033_1200x1200.png" alt="Sankey Diagram">
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="just-row">
+    <div class="header">
+      <h2>Publications</h2>
+    </div>
+    
+  <section id="publication">
+  <!-- </div> -->
+  <!-- <div class="row"> -->
+    <div class="grid-container">
+      <div class="grid-item-first">
+        <a href="">
+        <img width=550 height=300 class="image-publication" src="./eeg.png" alt="Publication 1">
+        <p class="description-project">CNN Classification using Epilepsy</p>
+        <p class="description">Developed one of the first Deep learning classifier that can classify epileptic signals on small datasets. The paper currently has 50+ citations</p>
+    </a>
+    </div>
+      <div class="grid-item-first">
+        <img width=550 height=300 class="image-publication" src="./system1.png" alt="Publication 2">
+        <p class="description-project">Enriching image descriptions for visually impaired individuals</p>
+        <p class="description">The research was a part of Master's Thesis that involved integrating several Computer Vision models to detect information such as emotions, clothes, actions and scene to provide more information about images to blind individuals</p>
+      </div>
+      <div class="grid-item">
+        <a href="https://link.springer.com/article/10.1007/s13534-019-00136-6">
+        <img width=550 height=300 class="image-publication" src="./aneurysm.webp" alt="Publication 3">
+        <p class="description-project">Detecting and Localising microaneurysms in a retina</p>
+        <p class="description">The research paper proposed one of the first methods to detect and localise microaneurysms using YOLOv3. The research involved collecting and manually annotating large amount of datsets for training the object detection model.</p>
+        </a>
+      </div>
+      <div class="grid-item">
+          <a href="https://ieeexplore.ieee.org/abstract/document/8869233">
+        <img width=550 height=300 class="image-publication" src="./genetic1.png" alt="Publication 4">
+        <p class="description-project">NeuroEvolution: Self-Designing a CNN architecture using genetic algorithms</p>
+        <p class="description">The research focussed on using genetic algorithm to design A CNN and RNN architecture and eliminated the need of fine tuning the models.</p>
+    </a>
+    </div>
+    </div>
+  </section>  
+  </div>
+  <div class="just-row">
+    <div class="header-even">
+      <h2>Open Source Contributions</h2>
+    </div>
+  <section id="opensource">
+    
+  <!-- </div> -->
+  <!-- <div class="row"> -->
+    <div class="grid-container-open">
+      <div class="grid-item-first-open" >
+        <a href="">
+        <img width=400 height=200 class="image-publication" src="./image.png" alt="Publication 1">
+        <p class="description-project">IMAGE</p>
+        <p class="description">A Chromium based browser extension aimed to improve image accessibility. The codebase and my contributions can be found <a href="https://github.com/Shared-Reality-Lab/IMAGE-server"><u>here</u></a></p>
+    </a>
+    </div>
+      <div class="grid-item-first-open">
+        <img width=400 height=200 class="image-publication" src="./flutter.png" alt="Publication 2">
+        <p class="description-project">All Mobile Sensors</p>
+        <p class="description">A flutter plugin that allows easy interaction of mobile sensors with flutter API. The plugin could be found <a href="https://pub.dev/packages/all_mobile_sensors"><u>here</u></a></p>
+      </div>
+      
+    </div>
+  </section>
+</div>
+<div class="just-row">
+    <div class="header">
+      <h2>Projects</h2>
+    </div>
+    <section id="project">
+    <div class="grid-container-project">
+      <div class="grid-item-first-project">
+        
+        <div class="grid-subcontainer-project">
+            <div class="grid-item-project">
+                <img width=250 height = 150 class="image-publication" src="./ml.jpg" alt="Publication 1">
+            </div>
+            <div class="grid-item-project">
+                <p class="description-project">Determining uncertainity among deep learning classifiers</p>
+                <p class="description" width="100%">The project focussed on using dropout to estimate the uncertainity of deep learning classifiers. The code was tested on MNIST and CIFAR-10 dataset. The code could is available on <a href="https://github.com/rohanakut/Exploring-uncertainity"><u>github</u></a></p>
+            </div>
+        </div>
+        <div class="grid-subcontainer-project">
+            <div class="grid-item-project">
+                <img width=250 height = 150 class="image-publication" src="./gan.jpg" alt="Publication 1">
+            </div>
+            <div class="grid-item-project">
+                <p class="description-project">Flashcards using Flutter</p>
+                <p class="description" width="100%">A flutter based mobile application intended for language enthusiasts. The code could is available on <a href="https://github.com/rohanakut/FlashcardsUsingFlutter"><u>github</u></a></p>
+            </div>
+        </div>
+        <div class="grid-subcontainer-project">
+            <div class="grid-item-project">
+                <img width=250 height = 150 padding=20px  src="./vdg.jpg" alt="Publication 1">
+            </div>
+            <div class="grid-item-project">
+                <p class="description-project">Cartpole-Mountaincar</p>
+                <p class="description">My reinforcement learning approaches for solving the problems of cartpole and mountaincar. The code can be found on <a href="https://github.com/rohanakut/Cartpole-Car"><u>github</u></a> </p>
+            </div>
+        </div>
+        <div class="grid-subcontainer-project-final">
+            <div class="grid-item-project-final">
+                <p class="description">View full project archive <a href="https://github.com/rohanakut"><u>here</u></a></p>
+            </div>
+            <div class="grid-item-project">
+                <!-- <p>Determining uncertainity</p>
+                <p class="description-project">Some Description</p> -->
+            </div>
+        </div>
+          <!-- <img class="image-publication" src="./eeg.png" alt="Publication 1">
+          <p class="project-title">IMAGE</p>
+          <div class="project-description">
+            <p class="project-title">IMAGE</p>
+            <p class="description">A Chromium based browser extension aimed to improve image accessibility.</p>
+          </div>
+        </a>
+      </div>
+      <div class="grid-item-first">
+        <img width=300 class="image-publication" src="./system1.png" alt="Publication 2">
+        
+        <div class="project-description">
+          <p class="project-title">All Mobile Sensors</p>
+          <p class="description">A flutter plugin that allows easy interaction of mobile sensors with flutter API.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+  </div>
+</div>
+</body>
+</html>
